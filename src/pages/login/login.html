@@ -10,7 +10,7 @@
             <ion-input placeholder="Email" name="username" id="loginField" type="text" required [(ngModel)]="username" #email></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)]="password"></ion-input>
+            <ion-input placeholder="Senha" name="password" id="passwordField" type="password" required [(ngModel)]="password"></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
@@ -18,8 +18,8 @@
     <ion-row>
       <ion-col>
         <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-        <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Login
-        </button>
+        <button ion-button class="submit-btn" full type="submit" [disabled]="!loginForm.form.valid">Entrar</button>
+        <button ion-button full outline>Esqueci a Senha</button>
       </ion-col>
     </ion-row>
   </form>

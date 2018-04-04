@@ -18,6 +18,10 @@ export class HomePage {
 
   }
 
+  ionViewDidLoad() {
+      this.loadEvents();
+  }
+
   loadEvents() {
       this.eventSource = this.createRandomEvents();
   }
@@ -51,6 +55,8 @@ export class HomePage {
   }
   
   createRandomEvents() {
+      var nomesDosEventos = ['Consulta', 'Visita ao IPESQ', 'Fazer exame', 'Enviar foto para o IPESQ', 'Passeio'];
+
       var events = [];
       for (var i = 0; i < 50; i += 1) {
           var date = new Date();
@@ -66,7 +72,7 @@ export class HomePage {
               }
               endTime = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate() + endDay));
               events.push({
-                  title: 'All Day - ' + i,
+                  title: 'O dia todo',
                   startTime: startTime,
                   endTime: endTime,
                   allDay: true
@@ -77,7 +83,7 @@ export class HomePage {
               startTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + startDay, 0, date.getMinutes() + startMinute);
               endTime = new Date(date.getFullYear(), date.getMonth(), date.getDate() + endDay, 0, date.getMinutes() + endMinute);
               events.push({
-                  title: 'Event - ' + i,
+                  title: nomesDosEventos[i % nomesDosEventos.length],
                   startTime: startTime,
                   endTime: endTime,
                   allDay: false
